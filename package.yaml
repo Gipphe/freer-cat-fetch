@@ -1,0 +1,113 @@
+name:                freer-cat-fetch
+version:             0.1.0.0
+github:              "githubuser/freer-cat-fetch"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2019 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/freer-cat-fetch#readme>
+
+dependencies:
+- base-noprelude >= 4.12.0.0 && < 5
+- polysemy >= 1.0.0.0 && < 2
+- polysemy-plugin
+- relude
+- text
+- lens
+- aeson
+- wreq
+
+default-extensions:
+- ApplicativeDo
+- BangPatterns
+- ConstraintKinds
+- DataKinds
+- DefaultSignatures
+- DeriveFoldable
+- DeriveFunctor
+- DeriveGeneric
+- DeriveLift
+- DeriveTraversable
+- DerivingStrategies
+- DoAndIfThenElse
+- EmptyCase
+- EmptyDataDecls
+- ExistentialQuantification
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTs
+- GeneralizedNewtypeDeriving
+- InstanceSigs
+- KindSignatures
+- LambdaCase
+- MonadFailDesugaring
+- MultiParamTypeClasses
+- MultiWayIf
+- NamedFieldPuns
+- OverloadedStrings
+- PartialTypeSignatures
+- PatternGuards
+- PatternSynonyms
+- PolyKinds
+- RankNTypes
+- ScopedTypeVariables
+- StandaloneDeriving
+- TupleSections
+- TypeApplications
+- TypeFamilies
+- TypeFamilyDependencies
+- TypeOperators
+- ViewPatterns
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wpartial-fields
+- -Wredundant-constraints
+- -dcore-lint
+- -O2
+- -flate-specialise
+- -fspecialise-aggressively
+- -fplugin=Polysemy.Plugin
+- -dcore-lint
+
+library:
+  source-dirs: src
+
+executables:
+  freer-cat-fetch-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - freer-cat-fetch
+
+tests:
+  freer-cat-fetch-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - freer-cat-fetch

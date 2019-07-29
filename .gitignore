@@ -1,0 +1,4 @@
+.stack-work/
+freer-cat-fetch.cabal
+*~
+.env
